@@ -45,7 +45,7 @@ ipycanvas>=0.9.1
 # Python: ipyleaflet library for Jupyter notebooks (optional)
 ipyleaflet
 # Python
-jupyterlab_jupyterbook_navigation==0.2.0
+jupyterlab_jupyterbook_navigation==0.2.1
 
 # Python: plotting libraries (optional)
 plotly>=5,<6
