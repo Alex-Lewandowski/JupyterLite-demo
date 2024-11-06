@@ -1,0 +1,24 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: README
+parts:
+  - caption: Start Here
+    chapters:
+      - file: javascript.ipynb
+  - caption: "Workshop Introduction"
+    chapters:
+      - file: p5.ipynb
+  - caption: "Additional Resources"
+    chapters:
+      - url: https://nisar.jpl.nasa.gov/engagement/early-adopters/
+        title: NISAR Early Adopters Website
+      - url: https://nisar.jpl.nasa.gov/
+        title: NISAR Mission Website (NASA)
+      - url: https://www.isro.gov.in/NISARSatellite.html
+        title: NISAR Mission Website (ISRO)
+      - url: https://asf.alaska.edu/
+        title: Alaska Satellite Facility Website
+      - url: https://hyp3-docs.asf.alaska.edu
+        title: ASF HyP3 On-Demand Processing Documentation
