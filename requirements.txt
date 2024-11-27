@@ -45,7 +45,7 @@ ipycanvas>=0.9.1
 # Python: ipyleaflet library for Jupyter notebooks (optional)
 ipyleaflet
 # Python
-jupyterlab_jupyterbook_navigation==0.2.2
+jupyterlab_jupyterbook_navigation==1.0.0
 # git+https://github.com/ASFOpenSARlab/jupyterlab-jupyterbook-navigation@JupyterLite#egg=jupyterlab-jupyterbook-navigation
 
 # Python: plotting libraries (optional)
