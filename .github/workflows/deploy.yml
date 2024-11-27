@@ -24,6 +24,7 @@ jobs:
       - name: Clone Jupyter Book
         run: |
           git clone --depth 1 https://github.com/ASFOpenSARlab/opensarlab_MintPy_Recipe_Book.git temp_repo
+          rm README.md
           rsync -av --ignore-existing temp_repo/ content
           rm -rf temp_repo
       - name: Build the JupyterLite site
