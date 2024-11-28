@@ -27,7 +27,7 @@ jobs:
           git clone --depth 1 https://github.com/ICESAT-2HackWeek/ICESat-2-Hackweek-2023.git temp
           mkdir content/ICESAT2-HackWeek2023_Jupyter_Book
           cp -r temp/book content/ICESAT2-HackWeek2023_Jupyter_Book
-          rem -rf temp
+          rm -rf temp
   
       - name: Build the JupyterLite site
         run: |
