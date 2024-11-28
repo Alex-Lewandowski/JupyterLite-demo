@@ -5,9 +5,7 @@
       "@jupyterlab/drawio-extension",
       "jupyterlab-kernel-spy",
       "jupyterlab-tour"
-    ]
-  },
-  "LiteBuildConfig": {
+    ],
     "extra_ignore_contents": [
       "/.jupyter_cache"
     ]
