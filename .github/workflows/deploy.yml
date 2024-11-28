@@ -23,14 +23,16 @@ jobs:
           python -m pip install -r requirements.txt
       - name: Clone Jupyter Book
         run: |
-          git clone --depth 1 https://github.com/ASFOpenSARlab/opensarlab_MintPy_Recipe_Book.git content/MintPy_Jupyter_Book
-          git clone --depth 1 https://github.com/ProjectPythia/pythia-foundations.git content/Pythia_Jupyter_Book
-          git clone --no-checkout --depth 1 https://github.com/ICESAT-2HackWeek/ICESat-2-Hackweek-2023.git content/ICESAT2-HackWeek2023_Jupyter_Book
+          cd content
+          git clone --depth 1 https://github.com/ASFOpenSARlab/opensarlab_MintPy_Recipe_Book.git MintPy_Jupyter_Book
+          git clone --depth 1 https://github.com/ProjectPythia/pythia-foundations.git Pythia_Jupyter_Book
+          git clone --no-checkout --depth 1 https://github.com/ICESAT-2HackWeek/ICESat-2-Hackweek-2023.git ICESAT2-HackWeek2023_Jupyter_Book
           
-          cd content/ICESAT2-HackWeek2023_Jupyter_Book
+          cd ICESAT2-HackWeek2023_Jupyter_Book
           git sparse-checkout init --cone
           git sparse-checkout set book
           git checkout main
+          cd ..
   
       - name: Build the JupyterLite site
         run: |
