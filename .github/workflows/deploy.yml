@@ -27,7 +27,7 @@ jobs:
           git clone --depth 1 https://github.com/TomasBeuzen/python-programming-for-data-science.git content/Python-Programming-for-Data-Science_Jupyter_Book
           git clone --no-checkout --depth 1 https://github.com/ICESAT-2HackWeek/ICESat-2-Hackweek-2023.git content/ICESAT2-HackWeek2023_Jupyter_Book
           
-          cd ICESAT2-HackWeek2023_Jupyter_Book
+          cd content/ICESAT2-HackWeek2023_Jupyter_Book
           git sparse-checkout init --cone
           git sparse-checkout set book
           git checkout main
