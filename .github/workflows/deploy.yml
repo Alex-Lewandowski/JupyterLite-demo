@@ -23,12 +23,9 @@ jobs:
           python -m pip install -r requirements.txt
       - name: Clone Jupyter Book
         run: |
-          git clone --depth 1 https://github.com/ASFOpenSARlab/opensarlab_MintPy_Recipe_Book.git content/MintPy_Jupyter_Book
-          git clone --depth 1 https://github.com/ICESAT-2HackWeek/ICESat-2-Hackweek-2023.git temp
-          mkdir content/ICESAT2-HackWeek2023_Jupyter_Book
-          cp -r temp/book content/ICESAT2-HackWeek2023_Jupyter_Book
-          rm -rf temp
-  
+          git clone --depth 1 https://github.com/ASFOpenSARlab/opensarlab_MintPy_Recipe_Book.git temp_repo
+          rsync -av --ignore-existing temp_repo/ content
+          rm -rf temp_repo
       - name: Build the JupyterLite site
         run: |
           jupyter lite build --contents content --output-dir dist
