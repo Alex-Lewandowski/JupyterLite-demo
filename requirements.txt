@@ -1,9 +1,7 @@
 # Core modules (mandatory)
 jupyterlite-core==0.2.3
-jupyterlab~=4.0.11
+jupyterlab~=4.3.5
 notebook~=7.0.7
-
-# jupyterlab-jupyterbook-navigation==0.2.0
 
 # Python kernel (optional)
 jupyterlite-pyodide-kernel==0.2.3
@@ -45,7 +43,7 @@ ipycanvas>=0.9.1
 # Python: ipyleaflet library for Jupyter notebooks (optional)
 ipyleaflet
 # Python
-jupyterlab_jupyterbook_navigation==1.0.0
+jupyterlab_jupyterbook_navigation==1.0.2
 # git+https://github.com/ASFOpenSARlab/jupyterlab-jupyterbook-navigation@JupyterLite#egg=jupyterlab-jupyterbook-navigation
 
 # Python: plotting libraries (optional)
