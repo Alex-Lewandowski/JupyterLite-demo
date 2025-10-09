@@ -23,10 +23,12 @@ jobs:
           python -m pip install -r requirements.txt
       - name: Clone Jupyter Book V1
         run: |
-          git clone --depth 1 https://github.com/ASFOpenSARlab/opensarlab_MintPy_Recipe_Book.git content/V1_Jupyter_Book
+          git clone --depth 1 https://github.com/ASFOpenSARlab/opensarlab_MintPy_Recipe_Book.git V1_Jupyter_Book
+          cp V1_Jupyter_Book content
       - name: Clone Jupyter Book V2
         run: |
           git clone --depth 1 https://github.com/ASFOpenSARlab/opensarlab-docs.git content/V2_Jupyter_Book
+          cp V2_Jupyter_Book content
       - name: Build the JupyterLite site
         run: |
           jupyter lite build --contents content --output-dir dist
