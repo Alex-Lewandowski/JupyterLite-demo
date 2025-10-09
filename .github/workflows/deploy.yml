@@ -27,7 +27,7 @@ jobs:
           cp -r V1_Jupyter_Book content
       - name: Clone Jupyter Book V2
         run: |
-          git clone --depth 1 https://github.com/ASFOpenSARlab/opensarlab-docs.git content/V2_Jupyter_Book
+          git clone --depth 1 https://github.com/ASFOpenSARlab/opensarlab-docs.git V2_Jupyter_Book
           cp -r V2_Jupyter_Book content
       - name: Build the JupyterLite site
         run: |
