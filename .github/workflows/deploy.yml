@@ -21,11 +21,12 @@ jobs:
       - name: Install the dependencies
         run: |
           python -m pip install -r requirements.txt
-      - name: Clone Jupyter Book
+      - name: Clone Jupyter Book V1
         run: |
-          git clone --depth 1 https://github.com/ASFOpenSARlab/opensarlab_MintPy_Recipe_Book.git temp_repo
-          rsync -av --ignore-existing temp_repo/ content
-          rm -rf temp_repo
+          git clone --depth 1 https://github.com/ASFOpenSARlab/opensarlab_MintPy_Recipe_Book.git V1_Jupyter_Book
+      - name: Clone Jupyter Book V2
+        run: |
+          git clone --depth 1 https://github.com/ASFOpenSARlab/opensarlab-docs.git V2_Jupyter_Book
       - name: Build the JupyterLite site
         run: |
           jupyter lite build --contents content --output-dir dist
