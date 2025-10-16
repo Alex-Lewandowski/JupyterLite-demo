@@ -44,7 +44,8 @@ ipycanvas>=0.9.1
 ipyleaflet
 # Python
 # jb-toc==2.0.0
-git+https://github.com/ASFOpenSARlab/jb-toc@name_change#egg=jb-toc
+# git+https://github.com/ASFOpenSARlab/jb-toc@name_change#egg=jb-toc
+git+https://github.com/ASFOpenSARlab/jb-toc@backend#subdirectory=jb_toc
 
 
 # Python: plotting libraries (optional)
