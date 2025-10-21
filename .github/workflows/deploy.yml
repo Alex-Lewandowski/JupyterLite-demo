@@ -45,6 +45,26 @@ jobs:
       - name: Build the JupyterLite site
         run: |
           jupyter lite build --contents content --output-dir dist
+          ls -R site/labextensions/jb-toc-frontend || true
+          python - <<'PY'
+          import json, pathlib
+          p = pathlib.Path("site/config/extensions.json")
+          print("extensions.json present:", p.exists())
+          if p.exists():
+              data = json.loads(p.read_text())
+              print("names:", [e.get("name") for e in data.get("federated_extensions", [])])
+              print("full:", json.dumps(data, indent=2)[:1200])
+          PY
+          jupyter lite build --output-dir site --debug | sed -n '1,200p'
+          python - <<'PY'
+          import sysconfig, json, pathlib
+          base = pathlib.Path(sysconfig.get_paths()["data"]) / "share" / "jupyter" / "labextensions" / "jb-toc-frontend"
+          print("labext exists:", base.exists())
+          if base.exists():
+              data = json.loads((base/'package.json').read_text())
+              print("labext package.json name:", data.get("name"))
+              print("jupyterlab.extension:", data.get("jupyterlab",{}).get("extension"))
+          PY
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
