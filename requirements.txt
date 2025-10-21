@@ -43,10 +43,8 @@ ipycanvas>=0.9.1
 # Python: ipyleaflet library for Jupyter notebooks (optional)
 ipyleaflet
 # Python
-# jb-toc==2.0.0
-# git+https://github.com/ASFOpenSARlab/jb-toc@name_change#egg=jb-toc
 git+https://github.com/ASFOpenSARlab/jb-toc@backend#subdirectory=jb_toc_frontend
-git+https://github.com/ASFOpenSARlab/jb-toc@backend#subdirectory=jb_toc
+# git+https://github.com/ASFOpenSARlab/jb-toc@backend#subdirectory=jb_toc
 
 
 # Python: plotting libraries (optional)
