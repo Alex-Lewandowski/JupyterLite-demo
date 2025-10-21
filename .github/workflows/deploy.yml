@@ -21,6 +21,19 @@ jobs:
       - name: Install the dependencies
         run: |
           python -m pip install -r requirements.txt
+          jupyter labextension list
+          python - <<'PY'
+          import sysconfig, pathlib, json
+          base = pathlib.Path(sysconfig.get_paths()["data"]) / "share" / "jupyter" / "labextensions"
+          print("labextensions dir:", base)
+          for d in sorted(base.glob("*")):
+              pjson = d / "package.json"
+              if pjson.exists():
+                  data = json.loads(pjson.read_text())
+                  print(" -", d.name, "extension:", data.get("jupyterlab", {}).get("extension"))
+                  static = sorted((d / "static").glob("remoteEntry*.js"))
+                  print("   remoteEntry:", [s.name for s in static])
+          PY
       - name: Clone Jupyter Book V1
         run: |
           git clone --depth 1 https://github.com/ASFOpenSARlab/opensarlab_MintPy_Recipe_Book.git V1_Jupyter_Book
